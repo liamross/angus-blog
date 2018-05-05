@@ -1,7 +1,87 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require('path');
 
- // You can delete this file if you're not using it
+/**
+ * Formats blog post titles in word-word format for URL.
+ * @param {string} title - Unformatted title of blog post.
+ */
+function titleFormatter(title) {
+  if (title && typeof title === 'string') {
+    return title
+      .toLowerCase()
+      .replace(/[^a-zA-Z\- ]/g, '')
+      .replace(/ /g, '-')
+      .replace(/-+/g, '-');
+  }
+  return '';
+}
+
+/**
+ * Generate blog pages from markdown
+ */
+exports.createPages = ({ boundActionCreators, graphql }) => {
+  const { createPage } = boundActionCreators;
+
+  const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
+
+  return graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
+
+    // Create blog posts pages.
+    const posts = result.data.allMarkdownRemark.edges;
+
+    posts.forEach(({ node }, index) => {
+      const previous =
+        index === posts.length - 1 ? null : posts[index + 1].node;
+      const next = index === 0 ? null : posts[index - 1].node;
+
+      createPage({
+        path: node.fields.slug,
+        component: blogPostTemplate,
+        context: {
+          slug: node.fields.slug,
+          previous,
+          next,
+        },
+      });
+
+      // createPage({
+      //   path: '/blog/' + titleFormatter(node.frontmatter.title),
+      //   component: blogPostTemplate,
+      //   context: {}, // additional data can be passed via context
+      // });
+    });
+  });
+};
+
+exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
+  const { createNodeField } = boundActionCreators;
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = '/blog/' + titleFormatter(node.frontmatter.title);
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    });
+  }
+};
