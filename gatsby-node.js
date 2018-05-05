@@ -21,7 +21,7 @@ function titleFormatter(title) {
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
-  const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
+  const BlogTemplate = path.resolve(`src/templates/blogTemplate.js`);
 
   return graphql(`
     {
@@ -56,19 +56,13 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
       createPage({
         path: node.fields.slug,
-        component: blogPostTemplate,
+        component: BlogTemplate,
         context: {
           slug: node.fields.slug,
           previous,
           next,
         },
       });
-
-      // createPage({
-      //   path: '/blog/' + titleFormatter(node.frontmatter.title),
-      //   component: blogPostTemplate,
-      //   context: {}, // additional data can be passed via context
-      // });
     });
   });
 };
