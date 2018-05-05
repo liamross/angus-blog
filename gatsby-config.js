@@ -6,14 +6,33 @@ module.exports = {
     siteUrl: 'www.caffeine-creations.ca',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
         name: 'markdown-pages',
       },
     },
-    `gatsby-transformer-remark`,
+    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Caffeine Creations',
+        short_name: 'CC ☕',
+        start_url: '/',
+        background_color: '#f7f0eb',
+        theme_color: '#a2466c',
+        display: 'minimal-ui',
+        icon: 'src/favicons/cc-logo-512.png',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-118772303-1',
+      },
+    },
+    'gatsby-plugin-offline',
+    'gatsby-plugin-react-helmet',
   ],
 };

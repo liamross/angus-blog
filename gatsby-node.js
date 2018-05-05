@@ -71,7 +71,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = '/blog/' + titleFormatter(node.frontmatter.title);
+    const value = '/' + titleFormatter(node.frontmatter.title);
     createNodeField({
       name: `slug`,
       node,
