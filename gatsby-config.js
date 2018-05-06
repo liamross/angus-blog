@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: 'www.caffeine-creations.ca',
   },
   plugins: [
+    'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -18,11 +19,11 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Caffeine Creations',
-        short_name: 'CC ☕',
+        short_name: 'Caffeine Creations',
         start_url: '/',
-        background_color: '#f7f0eb',
-        theme_color: '#a2466c',
-        display: 'minimal-ui',
+        theme_color: '#F4F4F4',
+        background_color: '#A6A6A6',
+        display: 'standalone',
         icon: 'src/favicons/cc-logo-512.png',
       },
     },

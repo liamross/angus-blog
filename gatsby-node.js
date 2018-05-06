@@ -71,7 +71,11 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = '/' + titleFormatter(node.frontmatter.title);
+    const value =
+      '/' +
+      titleFormatter(node.frontmatter.title) +
+      '-' +
+      node.frontmatter.date;
     createNodeField({
       name: `slug`,
       node,

@@ -1,10 +1,10 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
 
 const Header = ({ siteTitle }) => (
   <div
     style={{
-      background: 'rebeccapurple',
+      background: '#F4F4F4',
       marginBottom: '1.45rem',
     }}
   >
@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/"
           style={{
-            color: 'white',
+            color: '#95652E',
             textDecoration: 'none',
           }}
         >
@@ -28,6 +28,6 @@ const Header = ({ siteTitle }) => (
       </h1>
     </div>
   </div>
-)
+);
 
-export default Header
+export default Header;
