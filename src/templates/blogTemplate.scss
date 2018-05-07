@@ -55,12 +55,25 @@
 
     blockquote {
       display: block;
-      padding: 15px 20px 15px 45px;
-      margin: 24px;
+      padding: 15px 20px 15px 34px;
+      margin: 24px -24px;
       position: relative;
       color: $color-neutralSecondary;
       box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.16);
       border-left: 8px solid $color-postAccent;
+
+      > blockquote {
+        margin-right: 0;
+      }
+
+      @media screen and (min-width: 700px) {
+        padding: 15px 20px 15px 45px;
+        margin: 24px 24px 24px 0;
+
+        > blockquote {
+          margin-right: 16px;
+        }
+      }
     }
 
     a {
