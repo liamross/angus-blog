@@ -1,0 +1,16 @@
+@mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin block {
+  padding: 24px 36px 36px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.18);
+  background-color: $color-postBackground;
+  animation: fadein 150ms;
+  margin-bottom: 24px;
+  overflow: hidden;
+}

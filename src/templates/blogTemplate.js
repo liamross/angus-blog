@@ -1,6 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
+import Footer from '../components/footer';
+import './blogTemplate.scss';
 
 function BlogTemplate({ data, pathContext }) {
   const {
@@ -19,39 +21,19 @@ function BlogTemplate({ data, pathContext }) {
     <div className="blog-post-container">
       <Helmet title={`${title} | ${siteTitle}`} />
       <div className="blog-post">
-        <h1>{title}</h1>
-        <h2>{date}</h2>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <div className="blog-post-wrapper">
+          <div className="blog-post-header">
+            <h1 className="blog-post-header-title">{title}</h1>
+            <h3 className="blog-post-header-date">{date}</h3>
+          </div>
+          <div
+            className="blog-post-content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        </div>
       </div>
 
-      <ul
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-          listStyle: 'none',
-          padding: 0,
-        }}
-      >
-        {previous && (
-          <li>
-            <Link to={previous.fields.slug} rel="prev">
-              ← {previous.frontmatter.title}
-            </Link>
-          </li>
-        )}
-
-        {next && (
-          <li>
-            <Link to={next.fields.slug} rel="next">
-              {next.frontmatter.title} →
-            </Link>
-          </li>
-        )}
-      </ul>
+      <Footer previous={previous} next={next} />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import PostPreview from '../components/postPreview';
+import './index.scss';
 
 const IndexPage = ({
   data: {
@@ -11,7 +12,11 @@ const IndexPage = ({
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <PostPreview key={edge.node.id} node={edge.node} />);
 
-  return <div>{Posts}</div>;
+  return (
+    <div className="posts">
+      <div className="posts-wrapper">{Posts}</div>
+    </div>
+  );
 };
 
 export default IndexPage;
@@ -28,7 +33,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 240)
           fields {
             slug
           }

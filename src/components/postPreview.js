@@ -1,12 +1,17 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import './postPreview.scss';
 
 const PostPreview = ({ node }) => (
-  <div>
-    <Link to={node.fields.slug}>
-      {node.frontmatter.title} ({node.frontmatter.date})
-    </Link>
-    <div>{node.excerpt}</div>
+  <div className="preview">
+    <div className="preview-header">
+      <h4 className="preview-header-title">{node.frontmatter.title}</h4>
+      <div className="preview-header-date">{node.frontmatter.date}</div>
+    </div>
+    <div className="preview-exerpt">{node.excerpt}</div>
+    <div className="preview-link">
+      <Link to={node.fields.slug}>Read more...</Link>
+    </div>
   </div>
 );
 

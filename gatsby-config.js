@@ -10,7 +10,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/pages`,
+        path: `${__dirname}/src/pages/blog`,
         name: 'markdown-pages',
       },
     },
@@ -24,7 +24,7 @@ module.exports = {
         theme_color: '#F4F4F4',
         background_color: '#A6A6A6',
         display: 'standalone',
-        icon: 'src/favicons/cc-logo-512.png',
+        icon: 'src/img/logos/cc-logo-512.png',
       },
     },
     {
