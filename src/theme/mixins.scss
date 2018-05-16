@@ -1,3 +1,18 @@
+/**
+ * Sets a div to position absolute in its container and full height and width.
+ * Additionally, removes any margin and padding associated with the div.
+ */
+@mixin full-height {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
 @mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
   position: absolute;
   top: $top;

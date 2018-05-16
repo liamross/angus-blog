@@ -52,13 +52,17 @@ A quick table.
 | col 2 is      |   centered    |   $12 |
 | zebra stripes |   are neat    |    $1 |
 
-> Block quotes are written like so.
+> Block quotes are written like so.  
+> They can span _multiple_ paragraphs, if you like.
 >
-> They can span multiple paragraphs, if you like.
+> _- Liam Ross_
+
+> Block quotes are written like so.  
+> They can span _multiple_ paragraphs, if you like.
 >
-> > You can nest them as well.  
-> > Isn't that cool. Although you probably shouldn't... it looks medium at best I
-> > think.
+> > You can nest them too but you know what I don't know if I should really do
+> > that ya know?  
+> > But you shouldn't
 
 Also, Three dots ... will be converted to an ellipsis. Unicode is supported. ☺
 

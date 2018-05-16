@@ -1,23 +1,22 @@
 @import '../theme/theme';
 
-// Sets a div to position absolute in its container and full height and width.
-// Additionally, removes any margin and padding associated with the div.
-@mixin full-height {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-}
-
 html,
 body,
 div#___gatsby,
 div.blog {
   @include full-height;
+}
+
+// Set standard font.
+body {
+  font-family: $sans-serif;
+  color: $color-neutralPrimary;
+  font-size: 16px;
+}
+
+// Set paragraph text outside of blog posts.
+p {
+  font-family: $serif;
 }
 
 .blog-body {

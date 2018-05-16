@@ -8,7 +8,7 @@ const PostPreview = ({ node }) => (
       <h4 className="preview-header-title">{node.frontmatter.title}</h4>
       <div className="preview-header-date">{node.frontmatter.date}</div>
     </div>
-    <div className="preview-exerpt">{node.excerpt}</div>
+    <p className="preview-exerpt">{node.excerpt}</p>
     <div className="preview-link">
       <Link to={node.fields.slug}>Read more...</Link>
     </div>
