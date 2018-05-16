@@ -150,6 +150,8 @@ reality, and is very unpredictable, it is still controlled by our subconscious
 motives. We just have to realize them and transcribe them into rational thought
 to be controlled and then the dream of life will become a little more lucid.
 
+---
+
 Thank you for reading my lengthy first blog post! This one will be very
 different from future posts because I wanted to expand upon myself a little bit.
 Thanks again and be sure to come back for more current events writing and

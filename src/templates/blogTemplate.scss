@@ -43,10 +43,20 @@
   &-content {
     @include block;
 
+    hr {
+      border: 0;
+      border-bottom: 1px solid $color-neutralTertiary;
+      margin: 36px 0;
+    }
+
     h1 {
-      margin-top: 0;
-      border-bottom: 1px solid $color-postAccent;
-      padding-bottom: 16px;
+      margin: 36px 0 16px;
+      padding-top: 32px;
+      border-top: 1px solid $color-neutralTertiary;
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
 
     h1,
@@ -78,6 +88,10 @@
         margin-right: 0;
       }
 
+      &:first-child {
+        margin-top: 0;
+      }
+
       @media screen and (min-width: 700px) {
         padding: 15px 45px;
         margin: 24px 24px 24px 0;
@@ -102,6 +116,12 @@
     .tr-caption {
       // Styling for image captions.
       color: $color-neutralSecondary;
+    }
+
+    @media screen and (min-width: 700px) {
+      p {
+        text-align: justify;
+      }
     }
   }
 
