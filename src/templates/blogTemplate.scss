@@ -76,6 +76,19 @@
       box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.16);
       border-left: 8px solid $color-postAccent;
 
+      &:first-child {
+        margin-top: 0;
+      }
+
+      @media screen and (min-width: $mobile-width) {
+        padding: 15px 45px;
+        margin: 24px 0;
+
+        > blockquote {
+          margin-right: 16px;
+        }
+      }
+
       p {
         em:only-child {
           margin-left: auto;
@@ -86,19 +99,6 @@
 
       > blockquote {
         margin-right: 0;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
-
-      @media screen and (min-width: 700px) {
-        padding: 15px 45px;
-        margin: 24px 24px 24px 0;
-
-        > blockquote {
-          margin-right: 16px;
-        }
       }
     }
 
@@ -118,7 +118,7 @@
       color: $color-neutralSecondary;
     }
 
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: $mobile-width) {
       p {
         text-align: justify;
       }
