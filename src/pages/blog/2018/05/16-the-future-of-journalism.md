@@ -25,6 +25,8 @@ her independent status that allows her to seek the truth because she is not
 constrained by the interests of greater establishment media, and this is exactly
 what she counter-attacks with.
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/R6utDs1b_TU/0.jpg)](https://youtu.be/R6utDs1b_TU)
+
 In 2016, a clip from a United Nations press conference about the
 misrepresentation of the Syrian crisis (full UN panel in links below) was
 circulating through social media. This clip shows Eva Bartlett faced with a
