@@ -58,5 +58,5 @@ further confirming that this is an under discussed issue.
 This colossal mistake made by Channel 4 news is not what has shattered my
 respect for the corporation. It is the immature way that they have handled the
 criticism of their mistake. By creating the Bartlett smear article they have
-confirmed that they are nothing more than a squabbling child, unable to take
+displayed the behaviour found in a squabbling child that is unable to take
 responsibility for their ignorant, inept, and misleading reporting.
